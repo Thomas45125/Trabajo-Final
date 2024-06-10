@@ -7,7 +7,7 @@ const Presentation = () => {
       <div className="w-32 h-32 md:w-48 md:h-48 mb-4 md:mb-0">
         <img
           src="src/images/foto.jpeg"
-          alt="Tu Foto"
+          alt="Foto"
           className="w-full h-full object-cover rounded-full shadow-md"
         />
       </div>
