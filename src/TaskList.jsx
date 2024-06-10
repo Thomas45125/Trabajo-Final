@@ -1,4 +1,3 @@
-// src/Componentes/TaskList.js
 import React, { useState } from 'react';
 
 const TaskList = () => {
@@ -14,6 +13,7 @@ const TaskList = () => {
   };
 
   const handleToggleTask = (index) => {
+    console.log('Toggling task:', tasks[index]);
     const newTasks = tasks.map((task, i) =>
       i === index ? { ...task, completed: !task.completed } : task
     );
@@ -21,6 +21,7 @@ const TaskList = () => {
   };
 
   const handleRemoveTask = (index) => {
+    console.log('Removing task:', tasks[index]);
     const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
   };
@@ -30,6 +31,8 @@ const TaskList = () => {
     if (filter === 'incomplete') return !task.completed;
     return true;
   });
+
+  console.log('Filtered tasks:', filteredTasks);
 
   return (
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-4">
