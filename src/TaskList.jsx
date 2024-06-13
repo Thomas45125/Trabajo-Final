@@ -83,12 +83,14 @@ const TaskList = () => {
             >
               {task.text}
             </span>
-            <button
-              onClick={() => handleToggleTask(index)}
-              className={`mr-2 p-1 rounded ${task.completed ? 'bg-yellow-500 text-white' : 'bg-green-500 text-white'} hover:bg-opacity-75`}
-            >
-              {task.completed ? 'Incompleta' : '✅'}
-            </button>
+            {filter === 'all' && (
+              <button
+                onClick={() => handleToggleTask(index)}
+                className={`mr-2 p-1 rounded ${task.completed ? 'bg-yellow-500 text-white' : 'bg-green-500 text-white'} hover:bg-opacity-75`}
+              >
+                {task.completed ? 'Incompleta' : '✅'}
+              </button>
+            )}
             <button
               onClick={() => handleRemoveTask(index)}
               className="bg-red-500 text-white p-1 rounded hover:bg-red-700"
@@ -103,3 +105,4 @@ const TaskList = () => {
 };
 
 export default TaskList;
+
